@@ -1,4 +1,4 @@
-package com.ciandt.springbootmongodb.tasks.Controller;
+package com.ciandt.springbootmongodb.tasks.controller;
 
 import com.ciandt.springbootmongodb.tasks.dto.TaskDto;
 import com.ciandt.springbootmongodb.tasks.service.TasksService;
@@ -37,6 +37,7 @@ public class TaskAPI {
     @DeleteMapping("taskId")
     @ResponseBody
     public String deletar(@PathVariable("taskId") Long taskId) {
+
         return tasksService.delete(taskId);
     }
 
