@@ -16,12 +16,13 @@ public class TaskAPI {
     private TasksService tasksService;
 
     @PostMapping
+    @ResponseBody
     public TaskDto criar(@RequestBody TaskDto taskDto) {
-
         return tasksService.criar(taskDto);
     }
 
     @PutMapping("/{taskId}")
+    @ResponseBody
     public TaskDto atualizar(@PathVariable("taskId") Long taskId,
                              @RequestBody TaskDto taskDto) {
         return tasksService.atualizar(taskDto, taskId);
@@ -34,10 +35,9 @@ public class TaskAPI {
 
     }
 
-    @DeleteMapping("taskId")
+    @DeleteMapping("/{taskId}")
     @ResponseBody
     public String deletar(@PathVariable("taskId") Long taskId) {
-
         return tasksService.delete(taskId);
     }
 

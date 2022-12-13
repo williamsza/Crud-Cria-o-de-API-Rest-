@@ -10,31 +10,30 @@ import java.util.Map;
 
 @Service
 public class TasksService {
-    private static final Map<Long, TaskDto> task = new HashMap<>();
+    private static final Map<Long, TaskDto> tasks = new HashMap<>();
 
     public TaskDto criar(TaskDto taskDto) {
-        Long novoId = task.keySet().size() + 1L;
+        Long novoId = tasks.keySet().size() + 1L;
         taskDto.setId(novoId);
-        task.put(novoId, taskDto);
+        tasks.put(novoId, taskDto);
         return taskDto;
 
     }
     public TaskDto atualizar(TaskDto taskDto, Long taskId) {
-        task.put(taskId, taskDto);
+        tasks.put(taskId, taskDto);
         return taskDto;
-
 
     }
     public TaskDto getById(Long taskId){
-        return task.get(taskId);
+        return tasks.get(taskId);
     }
-    //Recuperar todos
+
     public List<TaskDto> getAll(){
-        return new ArrayList<>(task.values());
+        return new ArrayList<>(tasks.values());
 
     }
     public String delete(Long taskId){
-        task.remove(taskId);
+        tasks.remove(taskId);
         return "DELETED";
     }
 }
