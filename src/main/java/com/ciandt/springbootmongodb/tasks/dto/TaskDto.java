@@ -1,5 +1,8 @@
 package com.ciandt.springbootmongodb.tasks.dto;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
 public class TaskDto {
     private Long id;
     private String nome;
