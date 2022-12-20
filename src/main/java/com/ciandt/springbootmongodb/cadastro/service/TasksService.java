@@ -2,9 +2,6 @@ package com.ciandt.springbootmongodb.cadastro.service;
 
 import com.ciandt.springbootmongodb.cadastro.dto.TaskDto;
 import com.ciandt.springbootmongodb.cadastro.repository.TaskRepository;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.messaging.Task;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

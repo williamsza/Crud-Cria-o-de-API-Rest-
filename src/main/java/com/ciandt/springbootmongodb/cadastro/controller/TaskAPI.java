@@ -3,9 +3,7 @@ package com.ciandt.springbootmongodb.cadastro.controller;
 import com.ciandt.springbootmongodb.cadastro.dto.TaskDto;
 import com.ciandt.springbootmongodb.cadastro.service.TasksService;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 
@@ -34,7 +32,6 @@ public class TaskAPI {
     }
 
     @DeleteMapping("/{taskId}")
-    
     public String deletar(@PathVariable("taskId") Long taskId) {
         return tasksService.delete(taskId);
     }
