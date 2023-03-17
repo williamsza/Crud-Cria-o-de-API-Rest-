@@ -1,16 +1,27 @@
-package com.ciandt.springbootmongodb.tasks.dto;
+package com.ciandt.springbootmongodb.cadastro.dto;
 
-public class TaskDto {
-    private Long id;
+
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "task")
+
+public class ClientDto {
+
+    private String id;
     private String nome;
     private String phone;
     private String email;
 
-    public Long getId() {
+    public ClientDto(String nome, String email, String phone) {
+        this.nome = nome;
+        this.email = email;
+        this.phone = phone;
+    }
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
